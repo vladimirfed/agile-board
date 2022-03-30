@@ -7,7 +7,7 @@
     white-space: nowrap;
   }
   
-  .Column {
+  .Board {
     display: inline-block;
     vertical-align: top;
     width: 225px;
@@ -25,7 +25,7 @@
   
   .Card {
     padding: 15px;
-    background: red;
+    background: rgb(29, 182, 172);
     color: #f4fffd;
     border-radius: 5px;
     margin-bottom: 10px;

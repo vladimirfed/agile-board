@@ -19,7 +19,7 @@ const Card = () => {
     }
 
     const dragEnd = (e, card) =>{
-        e.target.style.background = 'red'
+        e.target.style.background = 'rgb(29, 182, 172)'
         console.log(card)
     }
 
@@ -31,7 +31,7 @@ const Card = () => {
 
     const dragLeave = (e, card) =>{
         console.log(card)
-        e.target.style.background = 'red'
+        e.target.style.background = 'rgb(29, 182, 172)'
     }
 
     const dragDrop = (e, card) =>{
@@ -46,7 +46,7 @@ const Card = () => {
             return c 
             
         }))
-        e.target.style.background = 'red'
+        e.target.style.background = 'rgb(29, 182, 172)'
         console.log(card)
     }
 
@@ -72,3 +72,5 @@ const Card = () => {
 };
 
 export default Card;
+
+
