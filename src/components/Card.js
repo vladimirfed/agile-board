@@ -4,10 +4,10 @@ import './style.css';
 const Card = () => {
 
     const [cardList, setCardList]  = useState( [
-        {id:1, order:1, text:'card 1'},
-        {id:2, order:2, text:'card 2'},
-        {id:3, order:3, text:'card 3'},
-        {id:4, order:4, text:'card 4'}
+        {id:1,  text:'card 1'},
+        {id:2,  text:'card 2'},
+        {id:3,  text:'card 3'},
+        {id:4,  text:'card 4'}
     ])
 
     const [currentCard, setCurrentCard] = useState ( null)
@@ -38,10 +38,10 @@ const Card = () => {
         e.preventDefault()
         setCardList(cardList.map(c=>{
             if(c.id === card.id){
-                return {...c, order: currentCard.order}
+                return {...c, id: currentCard.id}
             }
             if(c.id === currentCard.id){
-                return {...c, order: card.order}
+                return {...c, id: card.id}
             }
             return c 
             
@@ -50,7 +50,7 @@ const Card = () => {
         console.log(card)
     }
 
-    const sortCard = (a,b) => a.order > b.order ? 1 : -1
+    const sortCard = (a,b) => a.id > b.id ? 1 : -1
 
     return (
         <div>

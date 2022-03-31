@@ -15,24 +15,19 @@ const Board = () => {
     const dragStart = (e, card, board) =>{
         setCurrentBoard(board)
         setCurrentCard(card)
-        console.log(card)
+        
         
     }
 
     const dragEnd = (e) =>{
-        e.target.style.background = 'rgb(29, 182, 172)'
-        
     }
 
     const dragOver = (e ) =>{
         e.preventDefault()
-        e.target.style.background = 'lightgray'
-        
     }
 
     const dragLeave = (e) =>{
         
-        e.target.style.background = 'rgb(29, 182, 172)'
     }
 
     const dragDrop = (e, card, board) =>{
@@ -40,8 +35,8 @@ const Board = () => {
         const currentIndex = currentBoard.cards.indexOf(currentCard)
         currentBoard.cards.splice(currentIndex, 1)
 
-        const dropIndex = board.cards.indexOf(currentCard)
-        currentBoard.cards.splice(dropIndex, +1, 0, currentCard)
+        const dropIndex = board.cards.indexOf(card)
+        board.cards.splice(dropIndex +1, 0, currentCard)
 
         setBoards(boards.map(b=>{
             if(b.id === board.id){
@@ -59,13 +54,33 @@ const Board = () => {
         
     }
 
+    // const dragDropCard = (e,  board) =>{
+    //     board.cards.push(currentCard)
+    //     const currentIndex = currentBoard.cards.indexOf(currentCard)
+    //     currentBoard.cards.splice(currentIndex, 1)
+
+    //     setBoards(boards.map(b=>{
+    //         if(b.id === board.id){
+    //             return board
+    //         }
+    //         if(b.id === currentBoard.id){
+    //             return currentBoard
+    //         }
+    //         return b 
+    //     }))
+        
+    // }
+
 
 
     return (
         <div >
             <h1>Board</h1>
             {boards.map(board=>
-                <div className='Board'>
+                <div 
+                    // onDragOver={(e) => dragOver(e )}
+                    // onDrop={(e) => dragDropCard(e,  board)}
+                    className='Board'>
                     <div>{board.title}</div>
                     {board.cards.map(card=>
                         <div 
