@@ -54,22 +54,7 @@ const Board = () => {
         
     }
 
-    // const dragDropCard = (e,  board) =>{
-    //     board.cards.push(currentCard)
-    //     const currentIndex = currentBoard.cards.indexOf(currentCard)
-    //     currentBoard.cards.splice(currentIndex, 1)
 
-    //     setBoards(boards.map(b=>{
-    //         if(b.id === board.id){
-    //             return board
-    //         }
-    //         if(b.id === currentBoard.id){
-    //             return currentBoard
-    //         }
-    //         return b 
-    //     }))
-        
-    // }
 
 
 
@@ -78,8 +63,6 @@ const Board = () => {
             <h1>Board</h1>
             {boards.map(board=>
                 <div 
-                    // onDragOver={(e) => dragOver(e )}
-                    // onDrop={(e) => dragDropCard(e,  board)}
                     className='Board'>
                     <div>{board.title}</div>
                     {board.cards.map(card=>
