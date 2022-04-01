@@ -14,23 +14,19 @@ const Card = () => {
 
 
     const dragStart = (e, card) =>{
-        console.log(card)
         setCurrentCard(card)
     }
 
     const dragEnd = (e, card) =>{
         e.target.style.background = 'rgb(29, 182, 172)'
-        console.log(card)
     }
 
     const dragOver = (e, card) =>{
         e.preventDefault()
         e.target.style.background = 'lightgray'
-        console.log(card)
     }
 
     const dragLeave = (e, card) =>{
-        console.log(card)
         e.target.style.background = 'rgb(29, 182, 172)'
     }
 
@@ -47,7 +43,6 @@ const Card = () => {
             
         }))
         e.target.style.background = 'rgb(29, 182, 172)'
-        console.log(card)
     }
 
     const sortCard = (a,b) => a.id > b.id ? 1 : -1
